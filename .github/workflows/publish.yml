@@ -2,7 +2,7 @@ name: Upload release to PyPI
 
 on:
   release:
-    types: [created, edited, prereleased, published]
+    types: [prereleased, published]
     
 permissions: 
   id-token: 
