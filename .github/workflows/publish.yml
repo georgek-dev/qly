@@ -1,0 +1,29 @@
+name: Upload release to PyPI
+
+on:
+  release:
+    types: [created, edited, prereleased, published]
+
+jobs:
+  publish:
+    name: publish to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/qly
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+      - name: install deps
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install wheel pdm
+      - name: build package
+        run: |
+          pdm build
+      - name: publish to PyPI
+        uses: pypa/github-action-pypa-publish@release/v1
+      
