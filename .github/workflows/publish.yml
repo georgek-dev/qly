@@ -25,7 +25,7 @@ jobs:
         run: |
           pdm build
       - name: publish to PyPI
-        uses: pypa/github-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@release/v1
 
         
       
