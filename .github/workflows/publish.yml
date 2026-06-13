@@ -3,8 +3,13 @@ name: Upload release to PyPI
 on:
   release:
     types: [created, edited, prereleased, published]
+    
+permissions: 
+  id-token: 
+    write
 
 jobs:
+
   publish:
     name: publish to PyPI
     runs-on: ubuntu-latest
