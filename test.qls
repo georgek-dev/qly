@@ -1,0 +1,15 @@
+val .true bool true
+val .false bool false
+val .one int 1
+val .two int 2
+val error bool true
+val .hi bool abc
+val .three int abcd
+ln .true
+ln .false
+ln .one
+ln .two
+ln .error
+ln .hi
+ln .three
+ln etwo

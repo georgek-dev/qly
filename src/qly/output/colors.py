@@ -1,0 +1,70 @@
+# colors.py - color functions for qly
+# Licensed under the Apache-2.0 or BSD 3-Clause license
+# thanks to the Github Gist https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124 for the color-codes
+
+class Colors:
+    # STANDARD COLORS
+    BLACK = "\033[0;30m"
+    RED = "\033[0;31m"
+    GREEN = "\033[0;32m"
+    YELLOW = "\033[0;33m"
+    BLUE = "\033[0;34m"
+    PURPLE = "\033[0;35m"
+    CYAN = "\033[0;36m"
+    WHITE = "\033[0;37m"
+    # BOLD COLORS
+    BOLD_BLACK = "\033[1;30m"
+    BOLD_RED = "\033[1;31m"
+    BOLD_GREEN = "\033[1;32m"
+    BOLD_YELLOW = "\033[1;33m"
+    BOLD_BLUE = "\033[1;34m"
+    BOLD_PURPLE = "\033[1;35m"
+    BOLD_CYAN = "\033[1;36m"
+    BOLD_WHITE = "\033[1;37m"
+    # UNDERLINED COLORS
+    UNDERLINED_BLACK = "\033[4;30m"
+    UNDERLINED_RED = "\033[4;31m"
+    UNDERLINED_GREEN = "\033[4;32m"
+    UNDERLINED_YELLOW = "\033[4;33m"
+    UNDERLINED_BLUE = "\033[4;34m"
+    UNDERLINED_PURPLE = "\033[4;35m"
+    UNDERLINED_CYAN = "\033[4;36m"
+    UNDERLINED_WHITE = "\033[4;37m" 
+    # BACKGROUND COLORS
+    BG_BLACK = "\033[40m"
+    BG_RED = "\033[41m"
+    BG_GREEN = "\033[42m"
+    BG_YELLOW = "\033[43m"
+    BG_BLUE = "\033[44m"
+    BG_PURPLE = "\033[45m"
+    BG_CYAN = "\033[46m"
+    BG_WHITE = "\033[47m"
+    # HIGH INTENSITY COLORS
+    HI_BLACK = "\033[0;90m"
+    HI_RED = "\033[0;91m"
+    HI_GREEN = "\033[0;92m"
+    HI_YELLOW = "\033[0;93m"
+    HI_BLUE = "\033[0;94m"
+    HI_PURPLE = "\033[0;95m"
+    HI_CYAN = "\033[0;96m"
+    HI_WHITE = "\033[0;97m"
+    # BOLD HIGH INTENSITY COLORS
+    BHI_BLACK = "\033[1;90m"
+    BHI_RED = "\033[1;91m"
+    BHI_GREEN = "\033[1;92m"
+    BHI_YELLOW = "\033[1;93m"
+    BHI_BLUE = "\033[1;94m"
+    BHI_PURPLE = "\033[1;95m"
+    BHI_CYAN = "\033[1;96m"
+    BHI_WHITE = "\033[1;97m"
+    # HIGH INTENSITY BACKGROUNDS
+    HI_BG_BLACK = "\033[100m"
+    HI_BG_RED = "\033[101m"
+    HI_BG_GREEN = "\033[102m"
+    HI_BG_YELLOW = "\033[103m"
+    HI_BG_BLUE = "\033[104m"
+    HI_BG_PURPLE = "\033[105m"
+    HI_BG_CYAN = "\033[106m"
+    HI_BG_WHITE = "\033[107m"
+    # RESET
+    RESET = "\033[0m"
