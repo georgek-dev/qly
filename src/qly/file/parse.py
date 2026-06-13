@@ -2,6 +2,7 @@
 # Licensed under the Apache-2.0 or BSD 3-Clause license
 
 from qly.output.colors import Colors
+from qly.output.errors import error
 import sys
 
 commands = ["val", "ln"]
@@ -26,32 +27,28 @@ def langparse(line):
             a = ra[i]
             # we need to check for the required  args length
             if sl != a:
-                print(f"{Colors.RED}error E002: {Colors.RESET}{c} takes {a} arguments but {sl} were given")
-                sys.exit(0)
+                error("e002", c, a, sl)
             if c == "val":
+                # perform exhaustive checks for each variable-type
                 if split[1][0] != ".":
-                    print(f"{Colors.RED}error E003: {Colors.RESET} variable name {split[1]} does not begin with a .")
-                    sys.exit(1)
+                    error("e003", split[1], )
                 if split[2] not in types:
-                    print(f"{Colors.RED}error E004: {Colors.RESET}type {split[2]} for a variable is not valid")
-                    sys.exit(1)
+                    error("e004", split[2])
                 if split[2] == "int" and not split[2].isdigit():
-                    print(f"{Colors.RED}error E004: {Colors.RESET}type {split[2]} for a variable is not valid")
+                    error("e004", split[2])
                 if not any(char.isdigit() for char in split[3]) and (split[2] != "bool" or split[3] in ("true", "false")):
-                    print(f"{Colors.RED}error E005: {Colors.RESET}{split[3]} is not a valid value for type {split[2]}")
-                    sys.exit(1)
+                    error("e005", split[3], split[2])
                 if split[2] == "bool" and (split[3] not in ("true", "false")):
-                    print(f"{Colors.RED}error E005: {Colors.RESET}{split[3]} is not a valid value for type {split[2]}")
-                    sys.exit(1)
+                    error("e005", split[3], split[2])
+                if split[1] in vars:
+                    error("e007", split[1])
                 vars.append(split[1])
                 var_content.append(split[3])
             elif c == "ln":
                 if split[1][0] != ".":
-                    print(f"{Colors.RED}error E003: {Colors.RESET} variable name {split[1]} does not begin with a .")
-                    sys.exit(1)
+                    error("e003", split[1])
                 if split[1] not in vars:
-                    print(f"{Colors.RED}error E006: {Colors.RESET} variable {split[1]} doesn't exist")
-                    sys.exit(1)
+                    error("e006", split[1])
                 ti = vars.index(split[1])
                 content = var_content[ti]
                 print(str(content))
