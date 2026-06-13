@@ -9,7 +9,6 @@ permissions:
     write
 
 jobs:
-
   publish:
     name: publish to PyPI
     runs-on: ubuntu-latest
