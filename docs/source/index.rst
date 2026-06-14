@@ -11,6 +11,7 @@ quickly (qly) documentation
    :caption: for Users:
 
    users/tutorial
+   users/reference.rst
 
 .. toctree:
    :maxdepth: 2
