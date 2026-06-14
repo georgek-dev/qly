@@ -18,8 +18,7 @@ def langparse(line):
     if sl == 0: 
         return
     if split[0] not in commands:
-        print(f"{Colors.RED}error E001: {Colors.RESET}command {split[0]} not found")
-        sys.exit(1)
+        error("e001", split[0])
     # now run the command depending on what the line is
     for c in commands:
         if split[0] == c:
