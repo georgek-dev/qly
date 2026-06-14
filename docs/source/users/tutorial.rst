@@ -10,7 +10,8 @@ Um, but what even is a programming language?
 --------------------------------------------
 Imagine as if you could control computers by using a language to talk to them. The concept of programming languages is exactly this - allowing you to write instructions (known as: **code**) that help you to control your computer. In fact, all programming languages convert their code to a language named "Assembler". But it is very hard to type and read and it also varies by computer architecture. Take this code that prints "1234" on the screen in ARM64 assembler:
 
-.. code-block:: asm
+.. code-block:: gas
+
     .global _main
     .align 4
     
@@ -32,18 +33,22 @@ Imagine as if you could control computers by using a language to talk to them. T
         .ascii "1234\n"
 
 Whereas in qly it's just:
-.. code-block
+
+.. code-block:: text
+
     val .text int 1234
     ln .text
 
 Some programming languages make it even shorter. For example, in Python you'd type:
 
 .. code-block:: python
+
     print(1234)
 
 And some are longer. Take C for example:
 
 .. code-block:: C
+
     #include <stdio.h>
 
     int main() {
@@ -60,30 +65,51 @@ Interpreted programming languages are
 Your first program
 ==================
 Now, make sure that you can run "qly" from your terminal. Save the following code in "test.qls":
-.. code-block
+
+.. code-block:: text
+
     val .hello int 1
+
 Now, run in your terminal: "qly test.qls". If everything goes well, you will see no output. But why's that? Because we are not outputting anything. However something has happened: the program has stored your text 1 in a variable with the name "hello". Now if we leave the . in front of hello away, the interpreter produces an error.
 It outputs the following message:
-.. code-block
+
+.. code-block:: text
+
     error E003: variable name hello does not begin with a .
+
 The message explains that a . needs to be in front of the variable name hello. Such messages can be helpful for debugging when your code doesn't work, so be sure to check your code once in a while.
 Now, let's make the code do something. Add:
-.. code-block
+
+.. code-block:: text
+
     ln .hello
+
 Your code should so look like this:
-.. code-block
+
+.. code-block:: text
+
     val .hello int 1
     ln .hello
+
 Now, run the code. Let's retype "qly test.qls".
-.. code-block
+
+.. code-block:: text
+
     1
+
 That's all? Yes, because we only told the compiler to run that. Now try and change the "1" to your favorite number. Save and rerun. Now the output should be your favorite number.
 But what happened exactly?
-.. code-block
+
+.. code-block:: text
+
     val .hello int 1
+
 Here we told the program to create and store a variable with the name "hello" with an integer / number value of 1. However we can also save booleans instead! Just change "int" to "bool" and the number to "true" or "false" and rerun the code.
 And this line
-.. code-block
+
+.. code-block:: text
+
     ln .hello
+
 tells the interpreter to output a line with the variable "hello".
 Congratulations, you just wrote your first qly program!
