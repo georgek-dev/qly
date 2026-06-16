@@ -1,1 +1,1 @@
-Apache-2.0 OR BSD-3-Clause
+[Apache-2.0](LICENSE.APACHE-2.md) OR [BSD-3-Clause](LICENSE.BSD3.md)
