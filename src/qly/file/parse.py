@@ -3,16 +3,10 @@
 
 from qly.output.colors import Colors
 from qly.output.errors import error
+from qly.vars import commands, ra, types, vars, var_content
 import sys
 
-commands = ["val", "ln"]
-ra = [4, 2] 
-types = ["int", "bool"]
-vars = []
-var_content = []
-
 def langparse(line):
-    global commands, ra, types, vars, var_content
     split = line.split()
     sl = len(split)
     if sl == 0: 
@@ -30,13 +24,14 @@ def langparse(line):
             if c == "val":
                 # perform exhaustive checks for each variable-type
                 if split[1][0] != ".":
-                    error("e003", split[1], )
+                    error("e003", split[1])
                 if split[2] not in types:
                     error("e004", split[2])
-                if split[2] == "int" and not split[2].isdigit():
+                if split[2] == "int" and not split[3].isdigit():
                     error("e004", split[2])
-                if not any(char.isdigit() for char in split[3]) and (split[2] != "bool" or split[3] in ("true", "false")):
-                    error("e005", split[3], split[2])
+                if split[2] == "int":
+                    if not any(char.isdigit() for char in split[3]):
+                        error("e005", split[3], split[2])
                 if split[2] == "bool" and (split[3] not in ("true", "false")):
                     error("e005", split[3], split[2])
                 if split[1] in vars:
