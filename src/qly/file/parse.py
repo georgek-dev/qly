@@ -3,7 +3,7 @@
 
 from qly.output.colors import Colors
 from qly.output.errors import error
-from qly.vars import commands, ra, types, vars, var_content
+from qly.vars import commands, ra, types, vars, var_content, modifiers
 import sys
 
 
@@ -12,9 +12,15 @@ def langparse(line):
     sl = len(split)
     if sl == 0:
         return
-    if split[0] not in commands:
+    if split[0] not in commands and split[0] not in modifiers:
         error("e001", split[0])
     # now run the command depending on what the line is
+    if split[0] in modifiers:
+        if split[len(split) - 1] != split[0]:
+            error("e008", split[0])
+            sys.exit(1)
+        return
+
     for c in commands:
         if split[0] == c:
             i = commands.index(c)

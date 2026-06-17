@@ -14,8 +14,7 @@ def error(e, args1, args2="", args3=""):
         "e005": "%s is not a valid value for type %s" % (args1, args2),
         "e006": "variable %s doesn't exist" % args1,
         "e007": "variable %s already exists" % args1,
-    }
-    print(
-        f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), 'Unknown error - please report this!')}"
-    )
+        "e008": "modifier %s not closed" % args1
+    } 
+    print(f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), "Unknown error - please report this!")}")
     sys.exit(1)
