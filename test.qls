@@ -1,3 +1,4 @@
+% COMMENT 
 val .true bool true
 val .false bool false
 val .one int 1
