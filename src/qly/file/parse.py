@@ -26,10 +26,12 @@ def langparse(line):
             i = commands.index(c)
             a = ra[i]
             # we need to check for the required  args length
-            if sl != a:
+            if sl != a and a != "o":
                 error("e002", c, a, sl)
             if c == "val":
                 # perform exhaustive checks for each variable-type
+                if split[2] != "str" and sl != 4:
+                    error("e002", c, a, sl)
                 if split[1][0] != ".":
                     error("e003", split[1])
                 if split[2] not in types:
@@ -39,12 +41,24 @@ def langparse(line):
                 if split[2] == "int":
                     if not any(char.isdigit() for char in split[3]):
                         error("e005", split[3], split[2])
+                if split[2] == "str":
+                    if not split[3].startswith('"') or split[len(split) - 1].startswith(
+                        '"'
+                    ):
+                        error("e009")
+                    if line.count('"') != 2:
+                        error("e010")
                 if split[2] == "bool" and (split[3] not in ("true", "false")):
                     error("e005", split[3], split[2])
                 if split[1] in vars:
                     error("e007", split[1])
                 vars.append(split[1])
-                var_content.append(split[3])
+                if split[2] != "str":
+                    var_content.append(split[3])
+                    return
+                else:
+                    text = " ".join(split[3:]).replace('"', "")
+                    var_content.append(text)
             elif c == "ln":
                 if split[1][0] != ".":
                     error("e003", split[1])
