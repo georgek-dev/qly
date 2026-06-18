@@ -1,0 +1,66 @@
+name: Build qly
+
+on:
+  push:
+  pull_request: 
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build qly on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref || 'master' }}
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: setup packages
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pdm
+      - name: build qly
+        run: |
+          pdm build
+  build-macos:
+    name: Build qly on macOS
+    runs-on: macos-latest
+    steps:
+      - name: clone branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref || 'master' }}
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: setup packages
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pdm
+      - name: build qly
+        run: |
+          pdm build
+
+  build-windows:
+    name: Build qly on win
+    runs-on: windows-latest
+    steps:
+      - name: clone branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref || 'master' }}
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: setup packages
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pdm
+      - name: build qly
+        run: |
+          pdm build
