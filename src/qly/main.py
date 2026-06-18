@@ -4,12 +4,14 @@
 from qly.file.delegate.stream import parse
 import argparse
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("file")
     args = parser.parse_args()
     file = args.file
     parse(file)
+
 
 # ignore if not running interactively
 if __name__ == "__main__":

@@ -4,6 +4,7 @@
 import sys
 from qly.output.colors import Colors
 
+
 def error(e, args1, args2="", args3=""):
     errors = {
         "e001": "command %s not found" % args1,
@@ -12,7 +13,9 @@ def error(e, args1, args2="", args3=""):
         "e004": "type %s for a variable is not valid" % args1,
         "e005": "%s is not a valid value for type %s" % (args1, args2),
         "e006": "variable %s doesn't exist" % args1,
-        "e007": "variable %s already exists" % args1
-    } 
-    print(f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), "Unknown error - please report this!")}")
+        "e007": "variable %s already exists" % args1,
+    }
+    print(
+        f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), 'Unknown error - please report this!')}"
+    )
     sys.exit(1)

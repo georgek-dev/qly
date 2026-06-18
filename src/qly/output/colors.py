@@ -2,6 +2,7 @@
 # Licensed under the Apache-2.0 or BSD 3-Clause license
 # thanks to the Github Gist https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124 for the color-codes
 
+
 class Colors:
     # STANDARD COLORS
     BLACK = "\033[0;30m"
@@ -29,7 +30,7 @@ class Colors:
     UNDERLINED_BLUE = "\033[4;34m"
     UNDERLINED_PURPLE = "\033[4;35m"
     UNDERLINED_CYAN = "\033[4;36m"
-    UNDERLINED_WHITE = "\033[4;37m" 
+    UNDERLINED_WHITE = "\033[4;37m"
     # BACKGROUND COLORS
     BG_BLACK = "\033[40m"
     BG_RED = "\033[41m"
@@ -57,7 +58,7 @@ class Colors:
     BHI_PURPLE = "\033[1;95m"
     BHI_CYAN = "\033[1;96m"
     BHI_WHITE = "\033[1;97m"
-    # HIGH INTENSITY BACKGROUNDS
+    # HIGH INTENSITY BACKGROUNDS
     HI_BG_BLACK = "\033[100m"
     HI_BG_RED = "\033[101m"
     HI_BG_GREEN = "\033[102m"

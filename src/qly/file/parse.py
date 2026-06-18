@@ -6,10 +6,11 @@ from qly.output.errors import error
 from qly.vars import commands, ra, types, vars, var_content
 import sys
 
+
 def langparse(line):
     split = line.split()
     sl = len(split)
-    if sl == 0: 
+    if sl == 0:
         return
     if split[0] not in commands:
         error("e001", split[0])
@@ -47,5 +48,7 @@ def langparse(line):
                 content = var_content[ti]
                 print(str(content))
             else:
-                print(f"{Colors.RED}error E001: {Colors.RESET}command {split[0]} not found")
+                print(
+                    f"{Colors.RED}error E001: {Colors.RESET}command {split[0]} not found"
+                )
                 sys.exit(1)
