@@ -6,7 +6,7 @@ authors = [
     {name = "Georg K.",email = "gk_coder@icloud.com"},
 ]
 dependencies = ["sphinx>=9.1.0"]
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "Apache-2.0 OR BSD-3-Clause"}
 
