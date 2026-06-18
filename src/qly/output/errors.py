@@ -16,7 +16,7 @@ def error(e, args1="", args2="", args3=""):
         "e007": "variable %s already exists" % args1,
         "e008": "modifier %s not closed" % args1,
         "e009": "started string not closed",
-        "e010": "too many occurences of \""
+        "e010": 'too many occurences of "',
     }
     print(
         f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), 'Unknown error - please report this!')}"
