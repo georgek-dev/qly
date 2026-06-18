@@ -61,3 +61,30 @@ Examples
     val .int int 18
     ln .bool
     ln .int
+
+%
+===
+
+Synopsis
+--------
+``%`` - start and end of a comment.
+
+Arguments
+---------
+
+text
+^^^^
+The text of the comment.
+
+Examples
+--------
+
+.. code-block:: text
+    
+    % COMMENT %
+    % comments start and end with the percent symbol surrounded by spaces %
+    % save 2026 to the variable hello_world %
+    val .hello_world int 2026
+    % print the number 2026 to the screen %
+    ln .hello_world
+    
