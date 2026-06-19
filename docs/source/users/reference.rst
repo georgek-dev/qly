@@ -21,7 +21,7 @@ The name of the variable to store the value into. Must start with a dot ..
 
 type
 ^^^^
-Type of the value. Must be one of: ``int``, ``bool``.
+Type of the value. Must be one of: ``int``, ``bool``, ``str``.
 
 value
 ^^^^^
@@ -35,6 +35,7 @@ Examples
     val .integer int 5
     val .true bool true
     val .false bool false
+    val .hello_world str "Hello, world!"
 
 ln
 ===
@@ -56,11 +57,16 @@ Examples
 --------
 
 .. code-block:: text
-    
+
+    % booleans %
     val .bool bool true
-    val .int int 18
     ln .bool
+    % integers %
+    val .int int 18
     ln .int
+    % strings %
+    val .hello_world str "Hello, world!"
+    ln .hello_world
 
 %
 ===

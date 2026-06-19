@@ -68,48 +68,48 @@ Now, make sure that you can run "qly" from your terminal. Save the following cod
 
 .. code-block:: text
 
-    val .hello int 1
+    val .hello_world str "Hello, world!"
 
 Now, run in your terminal: "qly test.qls". If everything goes well, you will see no output. But why's that? Because we are not outputting anything. However something has happened: the program has stored your text 1 in a variable with the name "hello". Now if we leave the . in front of hello away, the interpreter produces an error.
 It outputs the following message:
 
 .. code-block:: text
 
-    error E003: variable name hello does not begin with a .
+    error E003: variable name hello_world does not begin with a .
 
 The message explains that a . needs to be in front of the variable name hello. Such messages can be helpful for debugging when your code doesn't work, so be sure to check your code once in a while.
 Now, let's make the code do something. Add:
 
 .. code-block:: text
 
-    ln .hello
+    ln .hello_world
 
 Your code should so look like this:
 
 .. code-block:: text
 
-    val .hello int 1
-    ln .hello
+    val .hello_world str "Hello, world!"
+    ln .hello_world
 
 Now, run the code. Let's retype "qly test.qls".
 
 .. code-block:: text
 
-    1
+    Hello, world!
 
 That's all? Yes, because we only told the compiler to run that. Now try and change the "1" to your favorite number. Save and rerun. Now the output should be your favorite number.
 But what happened exactly?
 
 .. code-block:: text
 
-    val .hello int 1
+    val .hello_world str "Hello, world!"
 
-Here we told the program to create and store a variable with the name "hello" with an integer / number value of 1. However we can also save booleans instead! Just change "int" to "bool" and the number to "true" or "false" and rerun the code.
+Here we told the program to create and store a variable with the name "hello" with a string value of "Hello, world!". However we can also save booleans instead! Just change "str" to "bool" and the text to "true" or "false" and rerun the code. qly also supports numbers, just make sure to change the type to int and the value to str.
 And this line
 
 .. code-block:: text
 
-    ln .hello
+    ln .hello_world
 
 tells the interpreter to output a line with the variable "hello".
 Congratulations, you just wrote your first qly program!
