@@ -20,7 +20,7 @@ def langparse(line):
             error("e008", split[0])
             sys.exit(1)
         return
-    
+
     for c in commands:
         if split[0] == c:
             i = commands.index(c)
@@ -42,9 +42,11 @@ def langparse(line):
                     if not any(char.isdigit() for char in split[3]):
                         error("e005", split[3], split[2])
                 if split[2] == "str":
-                    if not split[3].startswith("\"") or split[len(split) - 1].startswith("\""):
+                    if not split[3].startswith('"') or split[len(split) - 1].startswith(
+                        '"'
+                    ):
                         error("e009")
-                    if line.count("\"") != 2:
+                    if line.count('"') != 2:
                         error("e010")
                 if split[2] == "bool" and (split[3] not in ("true", "false")):
                     error("e005", split[3], split[2])
