@@ -43,6 +43,10 @@ def langparse(line):
                         error("e005", split[3], split[2])
                 if split[2] == "str":
                     text = " ".join(split[3:])
+                    if ('"' in line or "'" in line) and (
+                        line.count('"') != 2 or line.count("'") != 2
+                    ):
+                        error("e011")
                     if (not text.startswith('"') or not text.endswith('"')) and (
                         not text.startswith("'") or not text.endswith("'")
                     ):
