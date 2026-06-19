@@ -42,11 +42,13 @@ def langparse(line):
                     if not any(char.isdigit() for char in split[3]):
                         error("e005", split[3], split[2])
                 if split[2] == "str":
-                    if not split[3].startswith('"') or not split[len(split) - 1].endswith(
-                        '"'
-                    ):
+                    if not split[3].startswith('"') or not split[
+                        len(split) - 1
+                    ].endswith('"'):
                         error("e009")
-                    elif not split[3].startswith("'") or not split[len(split) - 1].endswith("'"):
+                    elif not split[3].startswith("'") or not split[
+                        len(split) - 1
+                    ].endswith("'"):
                         error("e009")
                     if line.count('"') != 2:
                         error("e010")
