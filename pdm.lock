@@ -8,7 +8,7 @@ lock_version = "4.5.0"
 content_hash = "sha256:d19a47c2546745efaaa02faa86c0381de4a481a8c7745193c45519e0bb10b870"
 
 [[metadata.targets]]
-requires_python = ">=3.14"
+requires_python = ">=3.12"
 
 [[package]]
 name = "alabaster"
