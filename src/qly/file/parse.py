@@ -42,12 +42,15 @@ def langparse(line):
                     if not any(char.isdigit() for char in split[3]):
                         error("e005", split[3], split[2])
                 if split[2] == "str":
-                    if not split[3].startswith('"') or split[len(split) - 1].startswith(
-                        '"'
+                    text = " ".join(split[3:])
+                    if (not text.startswith('"') or not text.endswith('"')) and (
+                        not text.startswith("'") or not text.endswith("'")
                     ):
                         error("e009")
-                    if line.count('"') != 2:
-                        error("e010")
+                    if ('"' in line and line.count('"') != 2) or (
+                        "'" in line and line.count("'") != 2
+                    ):
+                        error("e010", '"' if line.count('"') != 2 else "'")
                 if split[2] == "bool" and (split[3] not in ("true", "false")):
                     error("e005", split[3], split[2])
                 if split[1] in vars:
@@ -57,7 +60,7 @@ def langparse(line):
                     var_content.append(split[3])
                     return
                 else:
-                    text = " ".join(split[3:]).replace('"', "")
+                    text = " ".join(split[3:]).replace('"', "").replace("'", "")
                     var_content.append(text)
             elif c == "ln":
                 if split[1][0] != ".":
