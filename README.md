@@ -6,7 +6,7 @@ qly (short for: "quickly") is a programming language designed for doing things q
 
 ## Installing
 
-First you'll need Python (3.14 or newer - set to be loosened in #1) and pdm. For documentation sphinx is also recommended.
+First you'll need Python and pdm. For documentation sphinx is also recommended.
 Install these packages by: 
 ```bash
 $ pip install --upgrade pip
