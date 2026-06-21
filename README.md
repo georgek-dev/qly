@@ -2,6 +2,7 @@
 # qly
 
 _"the programming language that gets things done **quickly**"_
+
 qly (short for: "quickly") is a programming language designed for doing things quickly. Its syntax is simple to learn, it's powerful and quite fast.
 
 ## Installing
