@@ -3,9 +3,9 @@
 
 from qly.output.colors import Colors
 from qly.output.errors import error
-from qly.vars import commands, ra, vars, var_content, modifiers
+from qly.vars import commands, ra, modifiers
 from qly.functions.val import val
-
+from qly.functions.ln import ln
 import sys
 
 
@@ -33,13 +33,7 @@ def langparse(line):
             if c == "val":
                 val(split, line, c, a)
             elif c == "ln":
-                if split[1][0] != ".":
-                    error("e003", split[1])
-                if split[1] not in vars:
-                    error("e006", split[1])
-                ti = vars.index(split[1])
-                content = var_content[ti]
-                print(str(content))
+                ln(split)
             else:
                 print(
                     f"{Colors.RED}error E001: {Colors.RESET}command {split[0]} not found"
