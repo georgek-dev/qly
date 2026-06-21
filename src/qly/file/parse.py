@@ -1,6 +1,6 @@
 # parse.py - parse a file
 # Licensed under the Apache-2.0 or BSD 3-Clause license
- 
+
 from qly.output.errors import error
 from qly.vars import commands, ra, modifiers
 from qly.functions.val import val

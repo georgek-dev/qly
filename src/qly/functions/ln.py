@@ -4,6 +4,7 @@
 from qly.vars import vars, var_content
 from qly.output.errors import error
 
+
 def ln(split):
     if split[1][0] != ".":
         error("e003", split[1])

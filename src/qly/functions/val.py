@@ -2,7 +2,8 @@
 # Licensed under the Apache-2.0 or BSD 3-Clause
 
 from qly.output.errors import error
-from qly.vars import types, vars, var_content 
+from qly.vars import types, vars, var_content
+
 
 def val(split, line, c, a):
     if type(split) is not list:
