@@ -18,6 +18,7 @@ def error(e, args1="", args2="", args3=""):
         "e009": "started string not closed",
         "e010": "too many occurences of %s" % args1,
         "e011": "\" and ' mismatch",
+        "e012": "wrong type of variable passed - please report this"
     }
     print(
         f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), 'Unknown error - please report this!')}"
