@@ -1,5 +1,5 @@
 # parse.py - parse a file
-# Licensed under the Apache-2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 from qly.output.errors import error
 from qly.vars import commands, ra, modifiers

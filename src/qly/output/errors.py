@@ -1,5 +1,5 @@
 # errors.py - error-directory of qly interpreter errors
-# licensed under the Apache-2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 import sys
 from qly.output.colors import Colors

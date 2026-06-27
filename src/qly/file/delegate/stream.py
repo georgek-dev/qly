@@ -1,5 +1,5 @@
 # stream.py - handles the whole file stream process for qly
-# licensed under the Apache-2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 from qly.file.parse import langparse
 from qly.output.colors import Colors

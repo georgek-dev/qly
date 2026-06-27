@@ -1,5 +1,5 @@
 # init.py - entry point for the qly Cli
-# Licensed under the Apache 2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache 2.0 OR BSD-3-Clause
 
 from qly.file.delegate.stream import parse
 import argparse

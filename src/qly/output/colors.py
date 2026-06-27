@@ -1,5 +1,5 @@
 # colors.py - color functions for qly
-# Licensed under the Apache-2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 # thanks to the Github Gist https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124 for the color-codes
 
 

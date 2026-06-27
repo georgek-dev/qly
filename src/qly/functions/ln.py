@@ -1,5 +1,5 @@
 # ln.py - print a line to the screen
-# Licensed under the Apache-2.0 or BSD 3-Clause license
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 from qly.vars import vars, var_content
 from qly.output.errors import error
