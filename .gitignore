@@ -9,3 +9,4 @@ dist/
 .venv
 docs/build
 examples/
+.DS_Store
