@@ -5,6 +5,7 @@ import qly.vars
 from qly.output.errors import error
 from qly.functions.conditions.func_if import func_if
 
+
 def startobj(line: str):
     split = line.split(" ")
     if split[0][0] != "&":

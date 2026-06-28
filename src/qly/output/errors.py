@@ -24,7 +24,7 @@ def error(e, args1="", args2="", args3=""):
         "e015": "comparison %s not found" % args1,
         "e016": "type mismatch between variables %s and %s" % (args1, args2),
         "e017": "error in if function - please report this",
-        "e018": "trying to end not started indented block"
+        "e018": "trying to end not started indented block",
     }
     print(
         f"{Colors.RED}error {e.upper()}:{Colors.RESET} {errors.get(e.lower(), 'Unknown error - please report this!')}"

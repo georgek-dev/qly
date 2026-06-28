@@ -1,9 +1,10 @@
-# func_if.py - code for &if 
+# func_if.py - code for &if
 # SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 import qly.vars
 from qly.vars import vars, var_content, compare, var_types
 from qly.output.errors import error
+
 
 def func_if(line: str):
     split = line.split(" ")
