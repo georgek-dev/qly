@@ -1,6 +1,6 @@
 [project]
 name = "qly"
-version = "0.1.6"
+version = "0.1.7"
 description = "A simple, quick programming language"
 authors = [
     {name = "Georg K.",email = "gk_coder@icloud.com"},
