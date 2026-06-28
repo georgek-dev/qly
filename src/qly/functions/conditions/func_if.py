@@ -33,8 +33,15 @@ def func_if(line: str):
         if str(content1) == str(content2):
             qly.vars.inif = True
     elif type1 == "int" and type2 == "int":
-        if int(content1) == int(content2):
-            qly.vars.inif = True
+        if comparison == "==":
+            if int(content1) == int(content2):
+                qly.vars.inif = True
+        elif comparison == ">":
+            if int(content1) > int(content2):
+                qly.vars.inif = True
+        elif comparison == "<":
+            if int(content1) < int(content2):
+                qly.vars.inif = True
     elif type1 == "bool" and type2 == "bool":
         if bool(str(content1).title()) == bool(str(content2).title()):
             qly.vars.inif = True
