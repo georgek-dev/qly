@@ -6,4 +6,9 @@ ra = ["o", 2]
 types = ["int", "bool", "str"]
 vars = []
 var_content = []
+var_types = []
 modifiers = ["%"]
+obj = ["&"]
+compare = ["<", ">", "=="]
+inif = False
+indent = ">"

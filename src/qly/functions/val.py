@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
 
 from qly.output.errors import error
-from qly.vars import types, vars, var_content
+from qly.vars import types, vars, var_content, var_types
 
 
 def val(split, line, c, a):
@@ -43,3 +43,4 @@ def val(split, line, c, a):
     else:
         text = " ".join(split[3:]).replace('"', "").replace("'", "")
         var_content.append(text)
+    var_types.append(split[2])
